@@ -18,6 +18,7 @@
 		D9566B8D2BB1820F00A7A09D /* OffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B8C2BB1820F00A7A09D /* OffsetKey.swift */; };
 		D9566B952BB42AF700A7A09D /* DailyTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B942BB42AF700A7A09D /* DailyTasksView.swift */; };
 		D9566B992BB9B4E700A7A09D /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B982BB9B4E700A7A09D /* Assignment.swift */; };
+		D9566B9B2BBA2D9400A7A09D /* NewAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B9A2BBA2D9400A7A09D /* NewAssignmentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		D9566B8C2BB1820F00A7A09D /* OffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetKey.swift; sourceTree = "<group>"; };
 		D9566B942BB42AF700A7A09D /* DailyTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTasksView.swift; sourceTree = "<group>"; };
 		D9566B982BB9B4E700A7A09D /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		D9566B9A2BBA2D9400A7A09D /* NewAssignmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAssignmentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				D9566B5D2BAC405400A7A09D /* ContentView.swift */,
 				D9566B942BB42AF700A7A09D /* DailyTasksView.swift */,
+				D9566B9A2BBA2D9400A7A09D /* NewAssignmentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				D9566B8D2BB1820F00A7A09D /* OffsetKey.swift in Sources */,
 				D9566B5C2BAC405400A7A09D /* TaskManagerApp.swift in Sources */,
 				D9566B992BB9B4E700A7A09D /* Assignment.swift in Sources */,
+				D9566B9B2BBA2D9400A7A09D /* NewAssignmentView.swift in Sources */,
 				D9566B952BB42AF700A7A09D /* DailyTasksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

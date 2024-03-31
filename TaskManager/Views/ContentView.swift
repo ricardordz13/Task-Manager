@@ -14,6 +14,8 @@ struct ContentView: View {
     @State private var weekSlider: [[Date.WeekDay]] = []
     @State private var currentWeek: Int = 1
     @State private var createWeek: Bool = false
+    // New Assignment
+    @State private var createNewAssignment: Bool = false
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -21,8 +23,23 @@ struct ContentView: View {
         VStack {
             Header()
                 .padding([.horizontal, .top])
+            
+            Divider()
+
             DailyTasksView()
         }
+        .overlay(alignment: .bottomTrailing, content: {
+            Button(action: {
+                createNewAssignment.toggle()
+            }, label: {
+                Image(systemName: "plus")
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+                    .frame(width: 55, height: 55)
+                    .background(.teal, in: .circle)
+            })
+            .padding()
+        })
         .onAppear(perform: {
             if weekSlider.isEmpty {
                 let currentWeek = Date().fetchWeek()
@@ -37,6 +54,9 @@ struct ContentView: View {
                     weekSlider.append(lastDate.createNextWeek())
                 }
             }
+        })
+        .sheet(isPresented: $createNewAssignment, content: {
+            NewAssignmentView()
         })
     }
     
@@ -82,7 +102,6 @@ struct ContentView: View {
                 ForEach(weekSlider.indices, id: \.self) { index in
                     let week = weekSlider[index]
                     WeekView(week)
-                        //.padding()
                         .tag(index)
                 }
             }

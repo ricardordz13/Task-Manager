@@ -9,15 +9,7 @@ import SwiftUI
 
 struct DailyTasksView: View {
     @State private var isChecked = false
-    
-    let assignments: [Assignment] = [
-        Assignment(startDate: dateFrom(9,5,2023,7,0), endDate: dateFrom(9,5,2023,8,0), title: "Event 1"),
-        Assignment(startDate: dateFrom(9,5,2023,9,0), endDate: dateFrom(9,5,2023,10,0), title: "Event 2"),
-        Assignment(startDate: dateFrom(9,5,2023,11,0), endDate: dateFrom(9,5,2023,12,00), title: "Event 3"),
-        Assignment(startDate: dateFrom(9,5,2023,13,0), endDate: dateFrom(9,5,2023,14,45), title: "Event 4"),
-        Assignment(startDate: dateFrom(9,5,2023,15,0), endDate: dateFrom(9,5,2023,15,45), title: "Event 5"),
-    ]
-    
+        
     var body: some View {
         VStack(alignment: .leading) {
             ScrollView(showsIndicators: false) {
@@ -100,8 +92,8 @@ struct DailyTasksView: View {
                 .padding(.horizontal, 8)
                 .frame(height: height)
                 .background(
-                    RoundedRectangle(cornerRadius: 5)
-                        .fill(.teal).opacity(0.3)
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(event.category).opacity(0.3)
                 )
                 .padding(.leading, 10)
                 .padding(.trailing, 30)
