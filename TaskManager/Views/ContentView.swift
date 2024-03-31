@@ -15,10 +15,13 @@ struct ContentView: View {
     @State private var currentWeek: Int = 1
     @State private var createWeek: Bool = false
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         VStack {
             Header()
-            Spacer()
+                .padding([.horizontal, .top])
+            DailyTasksView()
         }
         .onAppear(perform: {
             if weekSlider.isEmpty {
@@ -35,7 +38,6 @@ struct ContentView: View {
                 }
             }
         })
-        .padding()
     }
     
     // Header
@@ -80,12 +82,12 @@ struct ContentView: View {
                 ForEach(weekSlider.indices, id: \.self) { index in
                     let week = weekSlider[index]
                     WeekView(week)
-                        //.padding(.horizontal, 15)
+                        //.padding()
                         .tag(index)
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
-            .frame(height: 75)
+            .frame(height: 65)
             .onChange(of: currentWeek, initial: false) { oldValue, newValue in
                 if newValue == 0 || newValue == (weekSlider.count - 1) {
                     createWeek = true
@@ -94,29 +96,37 @@ struct ContentView: View {
         }
     }
     
+    struct DayOfWeekView: View {
+        let day: Date.WeekDay
+        
+        var body: some View {
+            Text(day.date.format("E"))
+                .font(.caption)
+                .foregroundColor(.primary)
+        }
+    }
+    
     @ViewBuilder
     func WeekView(_ week: [Date.WeekDay]) -> some View {
         HStack(spacing: 0) {
             ForEach(week) { day in
                 VStack(spacing: 8) {
-                    Text(day.date.format("E"))
-                        .font(.caption)
-                        .foregroundColor(.primary)
-                    
+                    DayOfWeekView(day: day)
+
                     Text(day.date.format("dd"))
                         .font(.caption)
                         .frame(width: 35, height: 35)
                         .fontWeight(.medium)
-                        .foregroundStyle(isSameDate(day.date, currentDate) ? .white : .secondary)
+                        .foregroundStyle(isSameDate(day.date, currentDate) ? (colorScheme == .dark ? .black : .white) : (day.date.isToday ? .teal : .secondary))
                         .background(content: {
                             if isSameDate(day.date, currentDate) {
-                                Circle()
-                                    .fill(.teal)
-                            }
-                            
-                            // Show today is today
-                            if day.date.isToday {
-                                
+                                if day.date.isToday {
+                                    Circle()
+                                        .fill(.teal)
+                                } else {
+                                    Circle()
+                                        .fill(.primary)
+                                }
                             }
                         })
                 }

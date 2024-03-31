@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
+import SwiftData
+
+struct Assignment: Identifiable {
+    let id = UUID()
+    var startDate: Date
+    var endDate: Date
+    var title: String
+}

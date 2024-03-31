@@ -11,7 +11,14 @@ import SwiftUI
 struct TaskManagerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ContentView()
+                    .tabItem {
+                        Image(systemName: "clock")
+                        Text("Tasks")
+                    }
+            }
+            .accentColor(.teal)
         }
     }
 }
