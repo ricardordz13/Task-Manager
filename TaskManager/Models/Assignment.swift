@@ -5,22 +5,33 @@
 //  Created by Ricardo Jorge Rodriguez Trevino on 31/03/24.
 //
 
-import Foundation
 import SwiftUI
+import SwiftData
+import CloudKit
 
-struct Assignment: Identifiable {
-    let id = UUID()
-    var startDate: Date
-    var endDate: Date
-    var title: String
+@Model
+class Assignment: Identifiable {
+    var startDate: Date = Date.now
+    var endDate: Date = Date.now
+    var title: String = ""
     var isComplete: Bool = false
-    var category: Color
-}
+    var category: String = ""
 
-let assignments: [Assignment] = [
-    .init(startDate: dateFrom(9,5,2023,7,0), endDate: dateFrom(9,5,2023,8,0), title: "Event 1", category: .yellow),
-    .init(startDate: dateFrom(9,5,2023,9,0), endDate: dateFrom(9,5,2023,10,0), title: "Event 2", category: .green),
-    .init(startDate: dateFrom(9,5,2023,11,0), endDate: dateFrom(9,5,2023,12,00), title: "Event 3", category: .red),
-    .init(startDate: dateFrom(9,5,2023,13,0), endDate: dateFrom(9,5,2023,14,45), title: "Event 4", category: .blue),
-    .init(startDate: dateFrom(9,5,2023,15,0), endDate: dateFrom(9,5,2023,15,45), title: "Event 5", category: .brown),
-]
+    init(startDate: Date, endDate: Date, title: String, isComplete: Bool = false, category: String) {
+        self.startDate = startDate
+        self.endDate = endDate
+        self.title = title
+        self.isComplete = isComplete
+        self.category = category
+    }
+    
+    var categoryColor: Color {
+        switch category {
+        case "CategoryColor1": return .red
+        case "CategoryColor2": return .blue
+        case "CategoryColor3": return .green
+        case "CategoryColor4": return .yellow
+        default: return .teal
+        }
+    }
+}

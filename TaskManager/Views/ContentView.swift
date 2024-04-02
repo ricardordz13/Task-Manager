@@ -26,7 +26,7 @@ struct ContentView: View {
             
             Divider()
 
-            DailyTasksView()
+            TasksView(currentDay: $currentDate)
         }
         .overlay(alignment: .bottomTrailing, content: {
             Button(action: {

@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct TaskManagerApp: App {
+
     var body: some Scene {
         WindowGroup {
             TabView {
@@ -20,5 +21,6 @@ struct TaskManagerApp: App {
             }
             .accentColor(.teal)
         }
+        .modelContainer(for: Assignment.self)
     }
 }

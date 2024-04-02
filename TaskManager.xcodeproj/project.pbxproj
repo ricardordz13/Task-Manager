@@ -16,9 +16,10 @@
 		D9566B792BAC405500A7A09D /* TaskManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B782BAC405500A7A09D /* TaskManagerUITestsLaunchTests.swift */; };
 		D9566B8B2BAF355C00A7A09D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B8A2BAF355C00A7A09D /* Date.swift */; };
 		D9566B8D2BB1820F00A7A09D /* OffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B8C2BB1820F00A7A09D /* OffsetKey.swift */; };
-		D9566B952BB42AF700A7A09D /* DailyTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B942BB42AF700A7A09D /* DailyTasksView.swift */; };
 		D9566B992BB9B4E700A7A09D /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B982BB9B4E700A7A09D /* Assignment.swift */; };
 		D9566B9B2BBA2D9400A7A09D /* NewAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B9A2BBA2D9400A7A09D /* NewAssignmentView.swift */; };
+		D9566B9D2BBAFFBD00A7A09D /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B9C2BBAFFBD00A7A09D /* TasksView.swift */; };
+		D9566BA12BBB27DD00A7A09D /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566BA02BBB27DD00A7A09D /* TaskRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +52,12 @@
 		D9566B782BAC405500A7A09D /* TaskManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D9566B8A2BAF355C00A7A09D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		D9566B8C2BB1820F00A7A09D /* OffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetKey.swift; sourceTree = "<group>"; };
-		D9566B942BB42AF700A7A09D /* DailyTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTasksView.swift; sourceTree = "<group>"; };
 		D9566B982BB9B4E700A7A09D /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		D9566B9A2BBA2D9400A7A09D /* NewAssignmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAssignmentView.swift; sourceTree = "<group>"; };
+		D9566B9C2BBAFFBD00A7A09D /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		D9566BA02BBB27DD00A7A09D /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
+		D9566BA22BBC317F00A7A09D /* TaskManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskManager.entitlements; sourceTree = "<group>"; };
+		D9566BA32BBC336300A7A09D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 		D9566B5A2BAC405400A7A09D /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
+				D9566BA32BBC336300A7A09D /* Info.plist */,
+				D9566BA22BBC317F00A7A09D /* TaskManager.entitlements */,
 				D9566B5B2BAC405400A7A09D /* TaskManagerApp.swift */,
 				D9566B892BAF354B00A7A09D /* Helpers */,
 				D9566B882BAD81D200A7A09D /* ViewModels */,
@@ -152,8 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				D9566B5D2BAC405400A7A09D /* ContentView.swift */,
-				D9566B942BB42AF700A7A09D /* DailyTasksView.swift */,
 				D9566B9A2BBA2D9400A7A09D /* NewAssignmentView.swift */,
+				D9566B9C2BBAFFBD00A7A09D /* TasksView.swift */,
+				D9566BA02BBB27DD00A7A09D /* TaskRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,12 +312,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9566B5E2BAC405400A7A09D /* ContentView.swift in Sources */,
+				D9566BA12BBB27DD00A7A09D /* TaskRowView.swift in Sources */,
 				D9566B8B2BAF355C00A7A09D /* Date.swift in Sources */,
 				D9566B8D2BB1820F00A7A09D /* OffsetKey.swift in Sources */,
+				D9566B9D2BBAFFBD00A7A09D /* TasksView.swift in Sources */,
 				D9566B5C2BAC405400A7A09D /* TaskManagerApp.swift in Sources */,
 				D9566B992BB9B4E700A7A09D /* Assignment.swift in Sources */,
 				D9566B9B2BBA2D9400A7A09D /* NewAssignmentView.swift in Sources */,
-				D9566B952BB42AF700A7A09D /* DailyTasksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,18 +479,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TaskManager/TaskManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskManager/Preview Content\"";
 				DEVELOPMENT_TEAM = ADA3W5SAF7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskManager/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Kairos;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -501,18 +512,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TaskManager/TaskManager.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskManager/Preview Content\"";
 				DEVELOPMENT_TEAM = ADA3W5SAF7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskManager/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Kairos;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
