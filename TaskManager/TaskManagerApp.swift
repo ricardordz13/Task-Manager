@@ -9,18 +9,12 @@ import SwiftUI
 
 @main
 struct TaskManagerApp: App {
+    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            TabView {
-                ContentView()
-                    .tabItem {
-                        Image(systemName: "clock")
-                        Text("Tasks")
-                    }
-            }
-            .accentColor(.teal)
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
-        .modelContainer(for: Assignment.self)
     }
 }

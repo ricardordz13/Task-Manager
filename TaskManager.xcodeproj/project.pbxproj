@@ -16,10 +16,12 @@
 		D9566B792BAC405500A7A09D /* TaskManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B782BAC405500A7A09D /* TaskManagerUITestsLaunchTests.swift */; };
 		D9566B8B2BAF355C00A7A09D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B8A2BAF355C00A7A09D /* Date.swift */; };
 		D9566B8D2BB1820F00A7A09D /* OffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B8C2BB1820F00A7A09D /* OffsetKey.swift */; };
-		D9566B992BB9B4E700A7A09D /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B982BB9B4E700A7A09D /* Assignment.swift */; };
 		D9566B9B2BBA2D9400A7A09D /* NewAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B9A2BBA2D9400A7A09D /* NewAssignmentView.swift */; };
 		D9566B9D2BBAFFBD00A7A09D /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566B9C2BBAFFBD00A7A09D /* TasksView.swift */; };
 		D9566BA12BBB27DD00A7A09D /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9566BA02BBB27DD00A7A09D /* TaskRowView.swift */; };
+		D9FF517F2BBD520200A977C8 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF517E2BBD520200A977C8 /* PersistenceController.swift */; };
+		D9FF51852BBD5D3000A977C8 /* TaskManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9FF51832BBD5D3000A977C8 /* TaskManager.xcdatamodeld */; };
+		D9FF518A2BBDD05B00A977C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF51892BBDD05B00A977C8 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,12 +54,15 @@
 		D9566B782BAC405500A7A09D /* TaskManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D9566B8A2BAF355C00A7A09D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		D9566B8C2BB1820F00A7A09D /* OffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetKey.swift; sourceTree = "<group>"; };
-		D9566B982BB9B4E700A7A09D /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		D9566B9A2BBA2D9400A7A09D /* NewAssignmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAssignmentView.swift; sourceTree = "<group>"; };
 		D9566B9C2BBAFFBD00A7A09D /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		D9566BA02BBB27DD00A7A09D /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
 		D9566BA22BBC317F00A7A09D /* TaskManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskManager.entitlements; sourceTree = "<group>"; };
 		D9566BA32BBC336300A7A09D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D9FF517E2BBD520200A977C8 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		D9FF51842BBD5D3000A977C8 /* TaskMAnager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskMAnager.xcdatamodel; sourceTree = "<group>"; };
+		D9FF51882BBDAF4F00A977C8 /* TaskManagerRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskManagerRelease.entitlements; sourceTree = "<group>"; };
+		D9FF51892BBDD05B00A977C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +113,7 @@
 		D9566B5A2BAC405400A7A09D /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
+				D9FF51882BBDAF4F00A977C8 /* TaskManagerRelease.entitlements */,
 				D9566BA32BBC336300A7A09D /* Info.plist */,
 				D9566BA22BBC317F00A7A09D /* TaskManager.entitlements */,
 				D9566B5B2BAC405400A7A09D /* TaskManagerApp.swift */,
@@ -149,7 +155,6 @@
 		D9566B852BAD81BD00A7A09D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D9566B982BB9B4E700A7A09D /* Assignment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,6 +182,9 @@
 			children = (
 				D9566B8A2BAF355C00A7A09D /* Date.swift */,
 				D9566B8C2BB1820F00A7A09D /* OffsetKey.swift */,
+				D9FF517E2BBD520200A977C8 /* PersistenceController.swift */,
+				D9FF51832BBD5D3000A977C8 /* TaskManager.xcdatamodeld */,
+				D9FF51892BBDD05B00A977C8 /* SceneDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -311,13 +319,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FF517F2BBD520200A977C8 /* PersistenceController.swift in Sources */,
 				D9566B5E2BAC405400A7A09D /* ContentView.swift in Sources */,
+				D9FF51852BBD5D3000A977C8 /* TaskManager.xcdatamodeld in Sources */,
 				D9566BA12BBB27DD00A7A09D /* TaskRowView.swift in Sources */,
 				D9566B8B2BAF355C00A7A09D /* Date.swift in Sources */,
+				D9FF518A2BBDD05B00A977C8 /* SceneDelegate.swift in Sources */,
 				D9566B8D2BB1820F00A7A09D /* OffsetKey.swift in Sources */,
 				D9566B9D2BBAFFBD00A7A09D /* TasksView.swift in Sources */,
 				D9566B5C2BAC405400A7A09D /* TaskManagerApp.swift in Sources */,
-				D9566B992BB9B4E700A7A09D /* Assignment.swift in Sources */,
 				D9566B9B2BBA2D9400A7A09D /* NewAssignmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,7 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TaskManager/TaskManager.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TaskManager/TaskManagerRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaskManager/Preview Content\"";
@@ -660,6 +670,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D9FF51832BBD5D3000A977C8 /* TaskManager.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D9FF51842BBD5D3000A977C8 /* TaskMAnager.xcdatamodel */,
+			);
+			currentVersion = D9FF51842BBD5D3000A977C8 /* TaskMAnager.xcdatamodel */;
+			path = TaskManager.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D9566B502BAC405400A7A09D /* Project object */;
 }

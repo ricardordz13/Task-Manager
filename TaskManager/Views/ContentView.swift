@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
     // Formatted Date
-    @State private var currentDate: Date = .init()
+    @State private var currentDate: Date = Date()
     // Week Slider
     @State private var weekSlider: [[Date.WeekDay]] = []
     @State private var currentWeek: Int = 1
@@ -21,12 +22,12 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Header()
+            Header(currentDate: $currentDate) // Pass currentDate binding to Header
                 .padding([.horizontal, .top])
             
             Divider()
 
-            TasksView(currentDay: $currentDate)
+            TasksView(currentDay: $currentDate) // Pass currentDate binding to TasksView
         }
         .overlay(alignment: .bottomTrailing, content: {
             Button(action: {
@@ -62,21 +63,21 @@ struct ContentView: View {
     
     // Header
     @ViewBuilder
-    func Header() -> some View {
+    func Header(currentDate: Binding<Date>) -> some View { // Pass currentDate binding
         VStack {
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading) {
-                    Text(currentDate.formatted(date: .complete, time: .omitted))
+                    Text(currentDate.wrappedValue.formatted(date: .complete, time: .omitted)) // Use currentDate.wrappedValue
                         .textCase(.uppercase)
                         .font(.footnote)
                         .foregroundColor(Color.secondary)
                     
                     Group {
-                        Text(currentDate.format("MMMM "))
+                        Text(currentDate.wrappedValue.format("MMMM ")) // Use currentDate.wrappedValue
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundColor(Color.primary) +
-                        Text(currentDate.format("YYYY"))
+                        Text(currentDate.wrappedValue.format("YYYY")) // Use currentDate.wrappedValue
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundColor(Color.teal)
@@ -85,16 +86,6 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                Image(systemName: "person.fill")
-                    .font(.title2)
-                    .scaledToFit()
-                    .frame(width: 40, height: 40)
-                    .background(
-                        RoundedRectangle(cornerRadius: 90)
-                            .fill(.ultraThinMaterial)
-                    )
-                    .accessibility(label: Text("Account Settings"))
-                    .accessibility(addTraits: .isButton)
             }
             
             // Week Slider
@@ -107,11 +98,11 @@ struct ContentView: View {
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(height: 65)
-            .onChange(of: currentWeek, initial: false) { oldValue, newValue in
+            .onChange(of: currentWeek, perform: { newValue in
                 if newValue == 0 || newValue == (weekSlider.count - 1) {
                     createWeek = true
                 }
-            }
+            })
         }
     }
     
@@ -188,11 +179,5 @@ struct ContentView: View {
                 currentWeek = weekSlider.count - 2
             }
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
